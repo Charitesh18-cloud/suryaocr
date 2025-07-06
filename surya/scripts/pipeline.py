@@ -4,9 +4,23 @@ import json
 import re
 from PIL import Image
 
-from pdf2image import convert_from_path
+import pypdfium2
 
 from surya.layout import LayoutPredictor
+
+
+def convert_pdf_pages(pdf_path, dpi=300):
+    """
+    Use pypdfium2 to convert all pages of a PDF to PIL Images.
+    """
+    doc = pypdfium2.PdfDocument(pdf_path)
+    images = []
+    for i in range(len(doc)):
+        page = doc[i]
+        pil_image = page.render(scale=dpi/72).to_pil()
+        images.append(pil_image)
+    doc.close()
+    return images
 
 
 def run_surya_layout_on_pdf(pdf_path, output_folder):
@@ -49,7 +63,7 @@ def crop_clean_segments_with_margin(
     doc_key = list(layout_data.keys())[0]
     page_data_list = layout_data[doc_key]
 
-    original_images = convert_from_path(pdf_path, dpi=dpi)
+    original_images = convert_pdf_pages(pdf_path, dpi=dpi)
 
     layout_images = [f for f in os.listdir(layout_image_dir) if f.endswith("_layout.png")]
 

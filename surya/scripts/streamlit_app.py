@@ -218,7 +218,12 @@ recognize_math = st.sidebar.checkbox("➗ Recognize Math", value=True)
 ocr_with_boxes = st.sidebar.checkbox("🔲 OCR with Boxes", value=True)
 
 if not in_files:
+    st.markdown("""
+        ### 📂 No files uploaded yet
+        Please use the **sidebar** to upload PDFs or images to get started.
+    """)
     st.stop()
+
 
 filetype = in_files[0].type
 

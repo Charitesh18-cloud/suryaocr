@@ -12,7 +12,8 @@ from surya.common.surya.schema import TaskNames
 from surya.debug.draw import draw_polys_on_image, draw_bboxes_on_image
 from surya.debug.text import draw_text_on_image
 from surya.settings import settings
-import pipeline
+from surya.scripts import pipeline
+
 
 # === Load Surya predictors ===
 @st.cache_resource()

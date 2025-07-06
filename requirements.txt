@@ -4,7 +4,6 @@ pillow
 python-dotenv
 pypdfium2
 pdftext
-pdf2image  
 
 # Surya dependencies (local)
 -e .

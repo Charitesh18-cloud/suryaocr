@@ -1,0 +1,32 @@
+# Core dependencies
+streamlit
+pillow
+python-dotenv
+pypdfium2
+pdftext
+
+# Surya dependencies (structure assumed from import tree)
+# You likely already have this repo locally — this ensures it’s importable if editable
+-e .
+
+# ML and deep learning
+torch
+torchvision
+torchaudio
+
+# Image processing + debugging
+opencv-python-headless
+scikit-image
+matplotlib
+
+# Data utilities
+numpy
+tqdm
+pydantic
+
+# Optional but likely used internally in surya
+requests
+pyyaml
+
+# Streamlit caching may use hashing
+protobuf

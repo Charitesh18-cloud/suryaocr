@@ -4,9 +4,9 @@ pillow
 python-dotenv
 pypdfium2
 pdftext
+pdf2image   # ✅ NEW
 
-# Surya dependencies (structure assumed from import tree)
-# You likely already have this repo locally — this ensures it’s importable if editable
+# Surya dependencies
 -e .
 
 # ML and deep learning

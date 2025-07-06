@@ -4,9 +4,9 @@ pillow
 python-dotenv
 pypdfium2
 pdftext
-pdf2image   # ✅ NEW
+pdf2image  
 
-# Surya dependencies
+# Surya dependencies (local)
 -e .
 
 # ML and deep learning
@@ -28,5 +28,5 @@ pydantic
 requests
 pyyaml
 
-# Streamlit caching may use hashing
+# Streamlit caching
 protobuf
